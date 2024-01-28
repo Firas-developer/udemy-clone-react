@@ -1,0 +1,225 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+/*Navbar Styling*/
+.navbar{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid black 1px;
+    align-items: center;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.navbar__left{
+    color: rgb(155, 9, 155);
+}
+.navbar__middle{
+    width: 65%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: solid 1px black;
+    border-radius: 30px;
+    padding: 5px;
+}
+.navbar__middle input{
+    font-size: 17px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+}
+.navbar__right{
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+}
+.navbar__middle input:focus{
+    outline: none;
+}
+.navbar__right__mylearning{
+    position: relative;
+    cursor: pointer;
+}
+.mylearning__popup{
+    position: absolute;
+    right: 0;
+    top: 150%;
+    width: 150%;
+    height: 70px;
+    padding: 10px;
+    border: solid black 1px;
+    background-color: white;
+    display: none;
+}
+.navbar__right__mylearning:hover .mylearning__popup{
+    display: block;
+}
+.navbar__menu{
+    display: none;
+}
+/*Sales Section styling*/
+.sales__course{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px black;
+}
+.sales__course h4{
+    background-color: rgb(211, 12, 211);
+    border: solid 1px violet;
+    color: white;
+    padding: 10px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.sales__course h4:hover{
+    transition: 1s;
+    background-color: white;
+    color: black;
+    border: solid 1px violet;
+}
+.sales__img img{
+    width: 100%;
+}
+.sales__img{
+    position: relative;
+}
+.sales__msg{
+    width: 20%;
+    border: solid 1px black;
+    padding: 2%;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    background-color: white;
+    animation-name: fadein;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+.sales__msg p{
+    margin-top: 10px;
+}
+@keyframes fadein {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+}
+
+/*Recommendation Section*/
+.recommendation{
+    margin: 10px;
+}
+.recommendation__card{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+.course_card{
+    flex-grow: 1;
+    flex-basis: 20%;
+    margin: 5px;
+}
+.course_card img{
+    width: 100%;
+    height: 50%;
+}
+.topics{
+    margin: 10px;
+}
+.topic__contents{
+    display: flex;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+.topic__contents p{
+    border: solid 1px black;
+    flex-grow: 1;
+    flex-basis: 25%;
+    padding: 6px;
+    margin: 6px;
+}
+.topic__contents p:hover{
+    background-color: black;
+    color: white;
+}
+.popular{
+    margin: 10px;
+}
+.popular__card{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+.footer{
+    background-color: black;
+    padding: 30px;
+    color: white;
+}
+.footer__one{
+    display: flex;
+    gap: 50px;
+    margin-top: 20px;
+}
+.footer__two{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: end;
+}
+/*Media Queries*/
+@media screen and (max-width:900px) {
+    body{
+        font-size: 10px;
+    }
+    .sales__msg{
+        width: 30%;
+    }
+    .navbar__middle input{
+        font-size: 12px;
+        height: fit-content;
+    }
+}
+@media screen and (max-width:550px) {
+    .sales__msg{
+        width: 40%;
+    }
+    .navbar__right{
+        display: none;
+    }
+    .navbar__middle input{
+        font-size: 12px;
+        height: fit-content;
+    }
+    .navbar__middle{
+        margin-right: 10%;
+    }
+    .navbar__menu{
+        display: block;
+    }
+    .sales__course{
+        display: none;
+    }
+    .course_card{
+        flex-grow: 1;
+        flex-basis: 40%;
+    }
+}
